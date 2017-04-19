@@ -1,9 +1,14 @@
-# api documentation for  [koa-logger (v2.0.1)](https://github.com/koajs/logger#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-koa-logger.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-koa-logger) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-koa-logger.svg)](https://travis-ci.org/npmdoc/node-npmdoc-koa-logger)
+# npmdoc-koa-logger
+
+#### api documentation for  [koa-logger (v2.0.1)](https://github.com/koajs/logger#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-koa-logger.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-koa-logger) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-koa-logger.svg)](https://travis-ci.org/npmdoc/node-npmdoc-koa-logger)
+
 #### Logging middleware for koa
 
-[![NPM](https://nodei.co/npm/koa-logger.png?downloads=true)](https://www.npmjs.com/package/koa-logger)
+[![NPM](https://nodei.co/npm/koa-logger.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/koa-logger)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-koa-logger/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-koa-logger_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-koa-logger/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-koa-logger/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-koa-logger/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-koa-logger/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-koa-logger/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-koa-logger/build/screenCapture.npmPackageListing.svg)
 
@@ -54,45 +59,35 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "aheckmann",
-            "email": "aaron.heckmann+github@gmail.com"
+            "name": "aheckmann"
         },
         {
-            "name": "coderhaoxin",
-            "email": "coderhaoxin@outlook.com"
+            "name": "coderhaoxin"
         },
         {
-            "name": "dead_horse",
-            "email": "dead_horse@qq.com"
+            "name": "dead_horse"
         },
         {
-            "name": "eivifj",
-            "email": "eivind.fjeldstad@gmail.com"
+            "name": "eivifj"
         },
         {
-            "name": "fengmk2",
-            "email": "fengmk2@gmail.com"
+            "name": "fengmk2"
         },
         {
-            "name": "jongleberry",
-            "email": "jonathanrichardong@gmail.com"
+            "name": "jongleberry"
         },
         {
-            "name": "juliangruber",
-            "email": "julian@juliangruber.com"
+            "name": "juliangruber"
         },
         {
-            "name": "tejasmanohar",
-            "email": "me@tejas.io"
+            "name": "tejasmanohar"
         },
         {
-            "name": "tjholowaychuk",
-            "email": "tj@vision-media.ca"
+            "name": "tjholowaychuk"
         }
     ],
     "name": "koa-logger",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/koajs/logger.git"
@@ -103,16 +98,6 @@
     "version": "2.0.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module koa-logger](#apidoc.module.koa-logger)
-
-
-
-# <a name="apidoc.module.koa-logger"></a>[module koa-logger](#apidoc.module.koa-logger)
 
 
 
