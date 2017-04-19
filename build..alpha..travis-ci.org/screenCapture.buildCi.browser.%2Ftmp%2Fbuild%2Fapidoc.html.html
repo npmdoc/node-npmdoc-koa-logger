@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/koajs/logger#readme"
-
-    >koa-logger (v2.0.1)</a>
+    <a href="https://github.com/koajs/logger#readme">koa-logger (v2.0.1)</a>
 </h1>
 <h4>Logging middleware for koa</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.koa-logger">module koa-logger</a><ol>
 
@@ -89,9 +82,9 @@
   return function logger(ctx, next) {
     // request
     const start = new Date;
-    console.log(&#x27;  &#x27; + chalk.gray(&#x27;&#x3c;--&#x27;)
-      + &#x27; &#x27; + chalk.bold(&#x27;%s&#x27;)
-      + &#x27; &#x27; + chalk.gray(&#x27;%s&#x27;),
+    console.log('  ' + chalk.gray('&lt;--')
+      + ' ' + chalk.bold('%s')
+      + ' ' + chalk.gray('%s'),
         ctx.method,
         ctx.originalUrl);
 
@@ -103,25 +96,25 @@
       const length = ctx.response.length;
       const body = ctx.body;
       let counter;
-      if (null == length &#x26;&#x26; body &#x26;&#x26; body.readable) {
+      if (null == length &amp;&amp; body &amp;&amp; body.readable) {
         ctx.body = body
           .pipe(counter = Counter())
-          .on(&#x27;error&#x27;, ctx.onerror);
+          .on('error', ctx.onerror);
       }
 
       // log when the response is finished or closed,
       // whichever happens first.
       const res = ctx.res;
 
-      const onfinish = done.bind(null, &#x27;finish&#x27;);
-      const onclose = done.bind(null, &#x27;close&#x27;);
+      const onfinish = done.bind(null, 'finish');
+      const onclose = done.bind(null, 'close');
 
-      res.once(&#x27;finish&#x27;, onfinish);
-      res.once(&#x27;close&#x27;, onclose);
+      res.once('finish', onfinish);
+      res.once('close', onclose);
 
       function done(event){
-        res.removeListener(&#x27;finish&#x27;, onfinish);
-        res.removeListener(&#x27;close&#x27;, onclose);
+        res.removeListener('finish', onfinish);
+        res.removeListener('close', onclose);
         log(ctx, start, counter ? counter.length : length, null, event);
       }
 
@@ -145,3 +138,4 @@
     ]
 </div>
 </div>
+</body></html>

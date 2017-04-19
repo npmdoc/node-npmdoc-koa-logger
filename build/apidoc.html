@@ -61,12 +61,81 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.koa-logger">module koa-logger</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-logger.koa-logger">
+            function <span class="apidocSignatureSpan"></span>koa-logger
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.koa-logger" id="apidoc.module.koa-logger">module koa-logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-logger.koa-logger" id="apidoc.element.koa-logger.koa-logger">
+        function <span class="apidocSignatureSpan"></span>koa-logger
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dev(opts) {
+  return function logger(ctx, next) {
+    // request
+    const start = new Date;
+    console.log(&#x27;  &#x27; + chalk.gray(&#x27;&#x3c;--&#x27;)
+      + &#x27; &#x27; + chalk.bold(&#x27;%s&#x27;)
+      + &#x27; &#x27; + chalk.gray(&#x27;%s&#x27;),
+        ctx.method,
+        ctx.originalUrl);
+
+    return next().then(function() {
+
+      // calculate the length of a streaming response
+      // by intercepting the stream with a counter.
+      // only necessary if a content-length header is currently not set.
+      const length = ctx.response.length;
+      const body = ctx.body;
+      let counter;
+      if (null == length &#x26;&#x26; body &#x26;&#x26; body.readable) {
+        ctx.body = body
+          .pipe(counter = Counter())
+          .on(&#x27;error&#x27;, ctx.onerror);
+      }
+
+      // log when the response is finished or closed,
+      // whichever happens first.
+      const res = ctx.res;
+
+      const onfinish = done.bind(null, &#x27;finish&#x27;);
+      const onclose = done.bind(null, &#x27;close&#x27;);
+
+      res.once(&#x27;finish&#x27;, onfinish);
+      res.once(&#x27;close&#x27;, onclose);
+
+      function done(event){
+        res.removeListener(&#x27;finish&#x27;, onfinish);
+        res.removeListener(&#x27;close&#x27;, onclose);
+        log(ctx, start, counter ? counter.length : length, null, event);
+      }
+
+    }, function(err) {
+      // log uncaught downstream errors
+      log(ctx, start, null, err);
+      throw err;
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
