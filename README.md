@@ -95,7 +95,8 @@
     "scripts": {
         "test": "mocha --harmony test.js"
     },
-    "version": "2.0.1"
+    "version": "2.0.1",
+    "bin": {}
 }
 ```
 
